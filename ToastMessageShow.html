@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toast Messsage</title>
+
+    <style>
+        body {
+            font-family: arial, sans-serif;
+            padding: 40px;
+        }
+
+        button{
+            padding: 12px 20px;
+            background-color: #1707f0;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .toast{
+            position: fixed;
+            top: 20px;
+            right: 25px;
+            padding: 12px 15px;
+            background-color: #07c513;
+            color: white;
+            opacity: 0;
+            border-radius: 6px;
+            transition: 0.4s;
+        }
+        .toast.show{
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Toast Message</h2>
+    <button  onclick="showToast()">Save</button>
+
+    <button  onclick="showToast1('Update Successfully')">Update</button>
+    <button  onclick="showToast1('Add to cart Successfully')">Add to cart</button>
+    <button  onclick="showToast1('Delete Successfully')">Delete</button>
+
+    <div id="toast" class="toast">Saved Successfully</div>
+
+    <script>
+        function showToast(){
+            let toast = document.getElementById('toast');
+            toast.classList.add('show');
+
+            setTimeout(function(){
+                    toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function showToast1(message){
+            let toast = document.getElementById('toast');
+            toast.innerHTML = message;
+            toast.classList.add('show');
+
+            setTimeout(function(){
+                toast.classList.remove('show');
+            }, 3000);
+
+
+        }
+    </script>
+    
+</body>
+</html>
