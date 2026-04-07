@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copy to Clipboard</title>
+    <style>
+      body {
+        font-family: sans-serif, Arial;
+        padding: 40px;
+      }
+      .container {
+        width: 220px;
+        position: relative;
+        gap: 10px;
+      }
+      input {
+        width: 220px;
+        height: 25px;
+        padding: 5px;
+        border: 1px solid black;
+        border-radius: 6px;
+      }
+      button {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Copy to Clipboard Feature</h2>
+    <div class="container">
+      <input type="text" id="copyText" value="REF1235" readonly />
+
+      <button onclick="copyText()">Copy</button>
+    </div>
+
+    <script>
+      function copyText() {
+        let input = document.getElementById("copyText");
+        let text = input.value;
+        navigator.clipboard.writeText(text);
+
+        let btn = document.querySelector("button");
+        btn.innerHTML = "Copied!";
+
+        setTimeout(function () {
+          btn.innerHTML = "Copy";
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>
