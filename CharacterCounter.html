@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+
+    <style>
+      body {
+        font-family: sans-serif, Arial;
+        background-color: azure;
+        padding: 40px;
+      }
+      textarea {
+        width: 350px;
+        height: 150px;
+        font-size: 16px;
+        padding: 10px;
+        border: 1px solid black;
+      }
+      .counter {
+        width: 360px;
+        margin-top: 5px;
+        font-size: 14px;
+        text-align: right;
+      }
+      #textBox.danger {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Write Your Bio</h2>
+
+    <textarea
+      id="textBox"
+      maxlength="100"
+      class="textBox"
+      oninput="countCharacter()"
+    ></textarea>
+
+    <div id="counter" class="counter">0 / 100 characters</div>
+
+    <script>
+      function countCharacter() {
+        let text = document.getElementById("textBox");
+        let length = text.value.length;
+        let counter = document.getElementById("counter");
+
+        counter.innerHTML = length + " / 100 characters";
+
+        if (length >= 100) {
+          text.classList.add("danger");
+        } else {
+          text.classList.remove("danger");
+        }
+      }
+    </script>
+  </body>
+</html>
