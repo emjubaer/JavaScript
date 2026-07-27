@@ -23,4 +23,4 @@ function countVowels(str) {
 }
  
 console.log(countVowels("javascript")); // Expected: 3
-console.log(countVowels("I Love Bangladesh")); // Expected: 3
+console.log(countVowels("I Love Bangladesh")); // Expected: 6
