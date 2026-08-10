@@ -1,6 +1,9 @@
+// Return "Invalid"
+// যদি Input Object না হয়
+// অথবা name, age অথবা course property না থাকে
 
-let studentIntroduction = students => {
-    if (students == null && typeof students !== "object") {
+function studentIntroduction (students) {
+    if (typeof students !== "object" || Array.isArray(students) || students === null) {
         return "Invalid";
     }
     if (!students.name || !students.age || !students.course) {
@@ -13,3 +16,6 @@ let studentIntroduction = students => {
 
 let student = {name:"Rafi",age:18};
 console.log(studentIntroduction(student));
+console.log(studentIntroduction("student"));
+console.log(studentIntroduction({}));
+console.log(studentIntroduction({name:"Rafi",age:18,course:"JavaScript"}));
