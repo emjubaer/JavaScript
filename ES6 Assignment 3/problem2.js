@@ -3,8 +3,8 @@ let filterActiveUsers = users => {
     if (!Array.isArray(users) || users.length === 0) {
         return "Invalid";
     }
-    for (let user of users){
-        if (!("isActive" in user)) return "Invalid";
+    for (let user of users) {
+        if (!("isActive" in user || typeof user !== "object" || user === null)) return "Invalid";
     }
     let activeUser = users.filter(x => x.isActive == true)
     return activeUser;

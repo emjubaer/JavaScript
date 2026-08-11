@@ -6,16 +6,21 @@ function studentIntroduction (students) {
     if (typeof students !== "object" || Array.isArray(students) || students === null) {
         return "Invalid";
     }
+
     if (!students.name || !students.age || !students.course) {
         return "Invalid";
     }
+    
     const {name, age, course} = students;
     let message = `My name is ${name}. I am ${age} years old. I am learning ${course}.`;
     return message;
 }
 
-let student = {name:"Rafi",age:18};
+let student = {name:"Rafi",age:18, something: "New"};
+console.log(studentIntroduction({name:"Rafi",age:18,course:"JavaScript"}));
+console.log(studentIntroduction({name:"Rafi",course:"JavaScript"}));
 console.log(studentIntroduction(student));
 console.log(studentIntroduction("student"));
 console.log(studentIntroduction({}));
-console.log(studentIntroduction({name:"Rafi",age:18,course:"JavaScript"}));
+console.log(studentIntroduction([]));
+console.log(studentIntroduction(10));

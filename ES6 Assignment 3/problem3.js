@@ -1,5 +1,5 @@
 
-let countHashtags = caption => {
+function countHashtags (caption) {
     if (typeof caption !== "string") return "Invalid";
     let splitCaption = caption.split(" ");
     // return splitCaption;
@@ -13,7 +13,7 @@ let countHashtags = caption => {
 }
 
 console.log(countHashtags("Loving this weather today #sunny #vibes #weekend"));
-console.log(countHashtags("#aa #ai #ml data science"));
+console.log(countHashtags("#a #ai #ml data science"));
 console.log(countHashtags({}));
 console.log(countHashtags({name: "Jubaer"}));
 console.log(countHashtags("Jubaer"));
